@@ -18,14 +18,16 @@ namespace WordsPhrases
         /// <param name="text">El texto de la palabra.</param>
         public Word(string text)
         {
-            this.Text = text;
+            this.Text = NoSpace(text); //Llama al método para que la palabra no tenga espacios
         }
 
         /// <summary>
         /// Obtiene o establece el texto de la palabra. El texto no tiene espacios al comienzo ni al final -los espacios
         /// son removidos al asignar el texto-.
-        /// </summary>
-        /// <value>El texto de la palabra</value>
+        private string NoSpace(string word){
+            string noSpace = word.Replace(" ","");
+            return noSpace;
+        }
         public string Text
         {
             get
